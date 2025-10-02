@@ -11,9 +11,41 @@ Top-down: when solving programming problems by breaking them down into smaller a
 
 
 #include <stdio.h>
+int prime(int p){
+  for(int i=2; i<p; i += 1){
+    if(p%i == 0)
+      return 0;
+  }
+  if (p<3)
+    return 0;
+  else
+    return 1;
+}
+int five(int f){
+  while (f>0){
+    if (f%10 == 5)
+      return 1;
+    f = f/10;
+  }
+  return 0;
+}
 
 int main(){
+int n = 0, i = 1;
+while(n<60){
+  if (prime(i) == 1 && prime(i+2) == 1){
+    n += 1;
+    }
+  i += 1;
+}
+if (five(i)==1){
+  printf("It has a 5 in it\n}");
+}
+else {
+printf("It has no 5 in it\n");
+}
 
+printf("The 60th prime twins are %d and %d", i-1, i+1);
+return 0;
 
-  return 0;
 }
